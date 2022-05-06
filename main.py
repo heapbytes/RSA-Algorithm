@@ -26,30 +26,37 @@ args = parser.parse_args()
 argv = vars(args)
 
 if not argv['n']:
-  print('Enter the modulus with -n <number>')
-  parser.parse_args(['--help'])
+	print('Enter the modulus with -n <number>')
+	parser.parse_args(['--help'])
 else:
-  n = argv['n']
+	n = argv['n']
 
 if not argv['e']:
-  print('Enter the exponent with -e <number>')
-  parser.parse_args(['--help'])
+	print('Enter the exponent with -e <number>')
+	parser.parse_args(['--help'])
 else:
-  e = argv['e']
+  	e = argv['e']
 
 if not argv['c']:
-  print('Enter the ciphertext with -c <number>')
-  parser.parse_args(['--help'])
+	print('Enter the ciphertext with -c <number>')
+	parser.parse_args(['--help'])
 else:
-  c = argv['c']
+	c = argv['c']
+
+# Attacks library
+from RSAScan import RSAScan
 
 # Attack - 1 : weakprimes
-from RSAScan import RSAScan
-from attacks import weakprimes
 if argv['attack'] == 'weakprimes':
 	print('Trying for weakprimes attack.....!!')
-	print('Results of weakprime attack : ')
-	RSAScan.weakprimes(n,c,e)
+	print('Results of weakprime attack : ', RSAScan.weakprimes(n,c,e))
 	
+if argv['attack'] == 'e1':
+	print('Trying for e1 attack......!!')
+	print('Results : ', RSAScan.e1(c))
+
+if argv['attack'] == 'e3':
+	print('Trying for cube root attack......!!')
+	print('Results : ', RSAScan.e3(c))
 
 

@@ -1,6 +1,8 @@
-from sage.all import factor, ecm
+#!/bin/env python3
 
-def weakprimes(n):
+from sage.all import factor
+
+def factorize(n):
     return str(factor(n)).split(' * ')
 
 """
