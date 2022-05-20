@@ -3,6 +3,7 @@
 # Python Libraries
 import argparse
 import os
+import sys
 
 attack_list = ['weakprimes', 'e1', 'e3', 'commonfactor']
 
@@ -40,18 +41,27 @@ argv = vars(args)
 # Attacks library
 from RSAScan import RSAScan
 
+if len(sys.argv) <= 1:
+	s = RSAScan()
+	print(' Use -h for more information')
+else:
+	s = RSAScan()
+
 # Attack 1 : weakprimes
 if argv['attack'] == 'weakprimes':
+	c,n,e = argv['cipher'], argv['modulus'], argv['e']
 	print('Trying for weakprimes attack.....!!')
 	print('Results of weakprime attack : ', RSAScan.weakprimes(n,c,e))
 
 # Attack 2 : small exponent	
 if argv['attack'] == 'e1':
+	c = argv['cipher']
 	print('Trying for e1 attack......!!')
 	print('Results : ', RSAScan.e1(c))
 
 # Attack 3 : cube root
 if argv['attack'] == 'e3':
+	c = argv['cipher']
 	print('Trying for cube root attack......!!')
 	print('Results : ', RSAScan.e3(c))
 
