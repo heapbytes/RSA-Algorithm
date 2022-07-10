@@ -4,13 +4,13 @@
 from Crypto.Util.number import long_to_bytes	
 
 #####################################
-#			Attack Libraries     					#
+#			Attack Libraries     	#
 #####################################
 from attacks.weakprimes import factorize # weakprimes Library
 from attacks.e1e3 import e1 #e1 attack Library
 from attacks.e1e3 import e3
 from attacks.commonFactor import commonfactor #common factor Library
-
+from attacks.commonmodulus import common_modulus
 
 
 def solve(e,n,p,q,c):
@@ -23,19 +23,6 @@ def solve(e,n,p,q,c):
 
 
 class RSAScan:
-	def __init__(self):
-		banner = """
-		██████╗ ███████╗ █████╗     ███████╗ ██████╗ █████╗ ███╗   ██╗
-		██╔══██╗██╔════╝██╔══██╗    ██╔════╝██╔════╝██╔══██╗████╗  ██║
-		██████╔╝███████╗███████║    ███████╗██║     ███████║██╔██╗ ██║
-		██╔══██╗╚════██║██╔══██║    ╚════██║██║     ██╔══██║██║╚██╗██║
-		██║  ██║███████║██║  ██║    ███████║╚██████╗██║  ██║██║ ╚████║
-		╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝    ╚══════╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═══╝
-
-		An Open-Source Tool developed under the guidance of Prof V.B. Kamble                                                       
-		"""
-		print(banner)
-
 	def weakprimes(n,c,e):
 		primes = factorize(n)
 		p,q = int(primes[0]), int(primes[1])
@@ -53,9 +40,6 @@ class RSAScan:
 		msg = commonfactor(n1,n2,c1,c2,e)
 		return msg
 
-
-	
-	
-
-
-
+	def commonmodulus(e1,e2,n,c1,c2):
+		msg = common_modulus(e1,e2,n,c1,c2)
+		return msg.decode()
