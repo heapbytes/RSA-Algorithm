@@ -15,7 +15,7 @@ options:
   -cipher []   Enter the ciphertext (default = 0)
   -c1          Enter the c1, for attack : commonfactor
   -c2 []       Enter the c2, for attack : commonfactor
-  --attack     Enter the attack name {'weakprimes', 'e3', 'e1', 'commonfactor'}
+  --attack     Enter the attack name {'weakprimes', 'e3', 'e1', 'commonfactor', 'commonmodulus', 'wiener'}
                                                                                            
 ```
 
