@@ -42,7 +42,7 @@ options:
 
 ## Installation
 ### Dependencies and Requirements
-#### _install.sh will be uploaded soon_
+#### _install.py will be uploaded soon_
 
 - Sage math
 	- Debian Systems : `sudo apt install sagemath`
