@@ -5,7 +5,7 @@ import argparse
 import os
 import sys
 
-attack_list = ['weakprimes', 'e1', 'e3', 'commonfactor', 'commonmodulus']
+attack_list = ['weakprimes', 'e1', 'e3', 'commonfactor', 'commonmodulus', 'wiener']
 
 # Arguments 
 parser = argparse.ArgumentParser()
@@ -86,7 +86,10 @@ if argv['attack'] == 'commonmodulus':
     print('Trying for Common modulus attack..........!!')
     print('Results : ', RSAScan.commonmodulus(e1,e2,n,c1,c2))
 
-
+if argv['attack'] == 'wiener':
+	n, e, c = argv['modulus'], argv['e'], argv['cipher']
+	print('Trying for wiener attack......!!')
+	print('Results : ', RSAScan.wiener(e, n, c))
 
 
     

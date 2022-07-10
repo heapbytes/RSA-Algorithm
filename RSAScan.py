@@ -11,6 +11,7 @@ from attacks.e1e3 import e1 #e1 attack Library
 from attacks.e1e3 import e3
 from attacks.commonFactor import commonfactor #common factor Library
 from attacks.commonmodulus import common_modulus
+from attacks.wiener import wiener
 
 
 def solve(e,n,p,q,c):
@@ -43,3 +44,11 @@ class RSAScan:
 	def commonmodulus(e1,e2,n,c1,c2):
 		msg = common_modulus(e1,e2,n,c1,c2)
 		return msg.decode()
+
+	def wiener(e,n,c):
+		d = wiener(e, n)
+		msg = long_to_bytes(pow(c, d, n))
+		return msg.decode()
+
+
+

@@ -11,7 +11,7 @@ def wiener(e, n):
         try:
             m1 = pow(c, d, n)
             if m1 == m:
-                print "[*] Found d: ", d
+                print("[*] Found d: ", d)
                 return d
         except:
             continue
