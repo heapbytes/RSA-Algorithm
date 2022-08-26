@@ -1,6 +1,5 @@
 # RSA-Algorithm
-### An Open-Source Tool developed under the guidance of Prof V.B. Kamble
-
+### Note: _the proj status Is incomplete, it works for all the attacks noted. Feel free to contribute._
 ## Usage 
 
 ```
