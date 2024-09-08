@@ -1,0 +1,5 @@
+sympy
+Pycryptodome
+pwntools
+gmpy2
+sage
